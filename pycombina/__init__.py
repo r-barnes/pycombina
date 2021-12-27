@@ -20,14 +20,10 @@
 
 import os
 
+from . import _combina_gurobi
+from . import _combina_cvxpy
+from ._combina_milp import CombinaMILP
 from ._binary_approximation import BinApprox
-
-try:
-    import cvxpy
-
-    from ._combina_milp import CombinaMILP
-except ImportError:
-    print("- cvxpy not found, CombinaMILP disabled.\n")
 
 try:
     from ._combina_bnb import CombinaBnB
